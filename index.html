@@ -12,27 +12,27 @@
     <div class="container">
         <header>
             <div class="logo">
-                <span style="font-size:3rem;">π</span>
+                <span class="pi-symbol">π</span>
                 <h1>Banco Social Pi</h1>
             </div>
-            <div>
+            <div class="header-actions">
                 <button class="btn" id="connectBtn">Conectar Carteira</button>
-                <span id="networkBadge" style="margin-left:10px; background:#1e293b; padding:8px 16px; border-radius:30px;">Amoy</span>
+                <span id="networkBadge" class="network-badge">Amoy</span>
             </div>
         </header>
 
         <div class="stats-grid">
             <div class="card">
-                <div>Seu Saldo</div>
-                <div style="font-size:2rem;" id="balance">0 BSPI</div>
+                <div class="card-title">Seu Saldo</div>
+                <div class="card-value" id="balance">0 BSPI</div>
             </div>
             <div class="card">
-                <div>Total Queimado</div>
-                <div style="font-size:2rem;" id="burned">0 BSPI</div>
+                <div class="card-title">Total Queimado</div>
+                <div class="card-value" id="burned">0 BSPI</div>
             </div>
             <div class="card">
-                <div>Preço</div>
-                <div style="font-size:2rem;">R$ 3,14</div>
+                <div class="card-title">Preço</div>
+                <div class="card-value">R$ 3,14</div>
             </div>
         </div>
 
@@ -85,9 +85,9 @@
         <div id="ia" class="tab-content">
             <div class="card">
                 <h3>Assistente IA</h3>
-                <div id="iaMessages" style="height:200px; overflow-y:auto; background:#0f172a; padding:10px; border-radius:15px;"></div>
-                <div style="display:flex; margin-top:10px;">
-                    <input type="text" id="iaInput" style="flex:1; background:#1e293b; border:none; border-radius:20px; padding:10px; color:white;" placeholder="Pergunte sobre o BSPI...">
+                <div id="iaMessages" class="ia-messages"></div>
+                <div class="ia-input-group">
+                    <input type="text" id="iaInput" class="ia-input" placeholder="Pergunte sobre o BSPI...">
                     <button class="btn" id="iaSend">Enviar</button>
                 </div>
             </div>
