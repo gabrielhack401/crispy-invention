@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Banco Social Pi | BSPI com IA</title>
+    <title>Banco Social Pi | BSPI</title>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/style.css">
     <script src="https://cdn.jsdelivr.net/npm/ethers@5.7.2/dist/ethers.umd.min.js"></script>
@@ -47,47 +47,54 @@
         <div id="dashboard" class="tab-content active">
             <div class="card">
                 <h3>Bem-vindo ao Banco Social Pi</h3>
-                <p>Token social que apoia a Escola Sathya Sai.</p>
-                <p><strong>Endereço do contrato:</strong> 0x9cbA7EE455eED643555D12B65D28b82A3AdB3f10</p>
+                <p>Token social que apoia a <strong>Escola Sathya Sai</strong>.</p>
+                <p><strong>Contrato:</strong> <span class="contract-address">0x9cbA7EE455eED643555D12B65D28b82A3AdB3f10</span></p>
             </div>
         </div>
 
         <div id="transfer" class="tab-content">
             <div class="card">
-                <h3>Transferir BSPI</h3>
+                <h3>💸 Transferir BSPI</h3>
                 <div class="input-group">
-                    <input type="text" id="toAddress" placeholder="Endereço de destino">
+                    <input type="text" id="toAddress" placeholder="Endereço de destino (0x...)">
                 </div>
                 <div class="input-group">
-                    <input type="number" id="amount" placeholder="Quantidade" value="3.14">
+                    <input type="number" id="amount" placeholder="Quantidade" value="3.14" step="0.01" min="0">
                 </div>
-                <button class="btn btn-block" id="transferBtn">Transferir</button>
+                <button class="btn btn-block" id="transferBtn" disabled>Conecte a carteira</button>
+                <p id="transferFeedback" class="feedback"></p>
             </div>
         </div>
 
         <div id="burn" class="tab-content">
             <div class="card">
-                <h3>Queimar BSPI</h3>
+                <h3>🔥 Queimar BSPI</h3>
+                <p class="warning">⚠️ Ação irreversível</p>
                 <div class="input-group">
-                    <input type="number" id="burnAmount" placeholder="Quantidade" value="3.14">
+                    <input type="number" id="burnAmount" placeholder="Quantidade" value="3.14" step="0.01" min="0">
                 </div>
-                <button class="btn btn-block" id="burnBtn">Queimar</button>
+                <button class="btn btn-block" id="burnBtn" disabled>Queimar</button>
+                <p id="burnFeedback" class="feedback"></p>
             </div>
         </div>
 
         <div id="ranking" class="tab-content">
             <div class="card">
-                <h3>Maiores Detentores</h3>
-                <ul id="holderList"></ul>
+                <h3>🏆 Maiores Detentores</h3>
+                <ul id="holderList" class="ranking-list"></ul>
+            </div>
+            <div class="card">
+                <h3>🔥 Maiores Queimadores</h3>
+                <ul id="burnerList" class="ranking-list"></ul>
             </div>
         </div>
 
         <div id="ia" class="tab-content">
             <div class="card">
-                <h3>Assistente IA</h3>
+                <h3>🤖 Assistente Virtual</h3>
                 <div id="iaMessages" class="ia-messages"></div>
                 <div class="ia-input-group">
-                    <input type="text" id="iaInput" class="ia-input" placeholder="Pergunte sobre o BSPI...">
+                    <input type="text" id="iaInput" placeholder="Pergunte sobre o BSPI...">
                     <button class="btn" id="iaSend">Enviar</button>
                 </div>
             </div>
